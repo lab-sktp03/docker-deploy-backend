@@ -19,8 +19,8 @@ jobs:
         -
           name: run maven
           run: |
-              mvn clean install -DekipTests -B
-              mkdir -p target/dependency && (cd target/dependency; unzip ./*.jar)
+              mvn clean install -DskipTests -B
+              mkdir -p target/dependency && (cd target/dependency; unzip ../*.jar)
 
         -
           name: Set up QEMU
@@ -54,6 +54,6 @@ jobs:
             docker-compose -H ${{ secrets.HOST_SERVER }} down -remove-orphans
             docker-compose -H ${{ secrets.HOST_SERVER }} pull
             docker-compose -H ${{ secrets.HOST_SERVER }} up -d
-            
+
 
       
