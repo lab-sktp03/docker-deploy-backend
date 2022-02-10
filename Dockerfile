@@ -8,7 +8,7 @@ ENV JAVA_PROFILE prod
 
 ARG DEPENDENCY=target/dependency
 
-COPY ${DEPENDENCY}/BOOT_INF/lib /app/lib
+COPY ${DEPENDENCY}/BOOT-INF/lib /app/lib
 
 COPY  ${DEPENDENCY}/META-INF /app/META-INF
 
